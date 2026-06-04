@@ -21,17 +21,17 @@ const QuizPage: React.FC<QuizPageProps> = ({ onReset }) => {
     {
       id: 1,
       question: "Qual é a minha comida favorita no mundo inteiro?",
-      options: [" Hambúrguer ", " Lasanha ", " Pizza ", " Sushi "],
+      options: ["Hambúrguer", "Lasanha", "Pizza", "Sushi"],
       correctAnswer: "Pizza",
     },
     {
       id: 2,
       question: "Onde foi o nosso primeiríssimo encontro?",
       options: [
-        " No Parque ",
-        " No Cinema ",
-        " Na Liberdade ",
-        " Em uma Hamburgueria ",
+        "No Parque",
+        "No Cinema",
+        "Na Liberdade",
+        "Em uma Hamburgueria",
       ],
       correctAnswer: "Na Liberdade",
     },
@@ -39,10 +39,10 @@ const QuizPage: React.FC<QuizPageProps> = ({ onReset }) => {
       id: 3,
       question: "Se eu pudesse escolher qualquer superpoder, qual seria?",
       options: [
-        " Voar ",
-        " Teletransporte ",
-        " Ler mentes ",
-        " Invisibilidade ",
+        "Voar",
+        "Teletransporte",
+        "Ler mentes",
+        "Invisibilidade",
       ],
       correctAnswer: "Teletransporte",
     },
@@ -127,7 +127,7 @@ const QuizPage: React.FC<QuizPageProps> = ({ onReset }) => {
 
           <p className="quiz-result-message">
             {score === questions.length
-              ? "Você me conhece perfeitamente! Te amo mais que tudo! 💜"
+              ? "Você me conhece perfeitamente! Te amo mais que tudo! 🧡"
               : "Quase 100%! Acho que precisamos marcar mais encontros para conversar... 😉"}
           </p>
 

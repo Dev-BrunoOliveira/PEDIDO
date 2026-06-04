@@ -56,15 +56,8 @@ const PhotoGrid: React.FC<PhotoGridProps> = ({ onGoToQuiz }) => {
       {/* Cabeçalho */}
       <div className="photo-grid-header">
         <span className="photo-grid-title">
-          ✨ Dia da Nossa Mudança para nossa casa ✨
+          ✨ Que o nosso amor dure para sempre ✨
         </span>
-
-        <button
-          onClick={() => setShowModal(true)}
-          className="music-control-btn"
-        >
-          🎵 Controlar Música
-        </button>
       </div>
 
       {/* Grid de Fotos */}

@@ -405,60 +405,65 @@ button {
 
 .music-modal-overlay {
   position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  right: 20px;
+  bottom: 20px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 100;
 
-  padding: 16px;
+  background: transparent;
+
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  pointer-events: none;
 }
 
 .music-modal {
+  width: 280px;
+
   background: #edf4fb;
   border: 2px solid #6d97c7;
-  width: 320px;
+
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+
+  pointer-events: auto;
 }
 
 .music-modal-header {
   background: linear-gradient(#89aed8, #6d97c7);
+
   color: white;
-  padding: 8px;
   font-weight: bold;
+
+  padding: 6px 10px;
 }
 
-.music-modal-label,
-.music-modal-song {
-  padding: 12px;
+.music-modal-label {
+  padding-top: 10px;
   text-align: center;
 }
 
+.music-modal-song {
+  text-align: center;
+  padding: 8px;
+  color: #e65c00;
+  font-weight: bold;
+}
+
 .music-modal-actions {
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  padding: 10px;
 }
 
 .music-btn {
-  padding: 10px;
-  border: 1px solid #999;
-  cursor: pointer;
-}
-
-.music-btn-play {
-  background: #89d489;
-}
-
-.music-btn-pause {
-  background: #f0a0a0;
+  width: 100%;
+  margin-bottom: 8px;
 }
 
 .music-modal-close {
-  border: none;
-  background: transparent;
-  cursor: pointer;
+  width: 100%;
+  padding: 4px;
 }
 
 /* ==========================================

@@ -65,11 +65,11 @@ function App() {
 
           <div className="profile-info-list">
             <div>
-              <strong>status:</strong> Minha vida 🧡
+              <strong>status:</strong> Desenhando
             </div>
 
             <div>
-              <strong>quem sou eu:</strong> fã de plantas e dogs
+              <strong>quem sou eu:</strong> A Maioral
             </div>
 
             <div>
