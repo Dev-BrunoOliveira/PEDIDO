@@ -39,7 +39,7 @@ const QuizPage: React.FC<QuizPageProps> = ({ onReset }) => {
       id: 3,
       question: "Se eu pudesse escolher qualquer superpoder, qual seria?",
       options: [
-        " Voa r",
+        " Voar ",
         " Teletransporte ",
         " Ler mentes ",
         " Invisibilidade ",
@@ -63,33 +63,33 @@ const QuizPage: React.FC<QuizPageProps> = ({ onReset }) => {
   };
 
   return (
-    <div className="w-full max-w-md bg-[#F4F8FC] border-2 border-[#A4CEFF] p-5 rounded shadow-md">
-      <div className="bg-[#A4CEFF] text-[#003399] font-black p-2 mb-4 text-center border border-[#5B88C4] rounded-sm uppercase text-xs tracking-wider">
+    <div className="quiz-container">
+      <div className="quiz-header">
         ❓ Teste de Afinidade da Comunidade ❓
       </div>
 
       {!quizFinished ? (
-        <div>
-          <div className="mb-2 text-xs text-gray-500 font-mono text-right">
+        <div className="quiz-content">
+          <div className="quiz-progress">
             Pergunta {currentQuestionIndex + 1} de {questions.length}
           </div>
 
-          <h3 className="text-base font-bold text-[#4A3728] mb-4 bg-white p-3 border border-[#D4E2F4] rounded">
+          <h3 className="quiz-question">
             {questions[currentQuestionIndex].question}
           </h3>
 
-          <div className="flex flex-col gap-2 mb-6">
+          <div className="quiz-options">
             {questions[currentQuestionIndex].options.map((option, idx) => (
               <button
                 key={idx}
                 onClick={() => setSelectedOption(option)}
-                className={`w-full text-left p-3 rounded border text-sm transition-all ${
+                className={`quiz-option ${
                   selectedOption === option
-                    ? "bg-[#FF6600] text-white border-[#CC5200] font-bold shadow-inner"
-                    : "bg-white text-gray-700 border-[#CCD9E8] hover:bg-[#EBF2FA]"
+                    ? "quiz-option-selected"
+                    : "quiz-option-default"
                 }`}
               >
-                <span className="inline-block bg-gray-100 text-gray-600 rounded-full px-1.5 py-0.5 text-xs mr-2 font-mono border">
+                <span className="quiz-option-letter">
                   {String.fromCharCode(65 + idx)}
                 </span>
                 {option}
@@ -100,10 +100,10 @@ const QuizPage: React.FC<QuizPageProps> = ({ onReset }) => {
           <button
             onClick={handleNext}
             disabled={!selectedOption}
-            className={`w-full py-2 rounded font-bold text-sm tracking-wide border-b-2 transition-all ${
+            className={`quiz-next-btn ${
               selectedOption
-                ? "bg-[#003399] text-white border-[#002266] active:scale-98"
-                : "bg-gray-300 text-gray-500 border-gray-400 cursor-not-allowed"
+                ? "quiz-next-btn-enabled"
+                : "quiz-next-btn-disabled"
             }`}
           >
             {currentQuestionIndex + 1 === questions.length
@@ -112,19 +112,20 @@ const QuizPage: React.FC<QuizPageProps> = ({ onReset }) => {
           </button>
         </div>
       ) : (
-        <div className="text-center p-4 bg-white border border-[#D4E2F4] rounded">
-          <h3 className="text-xl font-black text-[#003399] mb-2">
+        <div className="quiz-result">
+          <h3 className="quiz-result-title">
             Fim do Quiz!
           </h3>
-          <p className="text-sm text-gray-600 mb-4">
+
+          <p className="quiz-result-subtitle">
             Veja quanta sorte eu tenho de ter você:
           </p>
 
-          <div className="inline-block bg-[#E5EDF5] text-[#E65C00] text-3xl font-black px-6 py-3 rounded-full border-2 border-[#80A9D9] mb-6 font-mono">
+          <div className="quiz-score">
             {score} / {questions.length}
           </div>
 
-          <p className="text-xs text-gray-500 italic mb-4">
+          <p className="quiz-result-message">
             {score === questions.length
               ? "Você me conhece perfeitamente! Te amo mais que tudo! 💜"
               : "Quase 100%! Acho que precisamos marcar mais encontros para conversar... 😉"}
@@ -132,7 +133,7 @@ const QuizPage: React.FC<QuizPageProps> = ({ onReset }) => {
 
           <button
             onClick={onReset}
-            className="text-xs text-[#003399] underline hover:text-[#FF6600]"
+            className="quiz-back-btn"
           >
             ← Voltar para o início
           </button>

@@ -38,10 +38,9 @@ const PhotoGrid: React.FC<PhotoGridProps> = ({ onGoToQuiz }) => {
   }&start=24&enablejsapi=1`;
 
   return (
-    <div className="w-full max-w-2xl bg-white border-2 border-[#D4E2F4] p-4 rounded shadow-lg relative">
-
+    <div className="photo-grid-container">
       {/* Player oculto */}
-      <div className="hidden">
+      <div className="youtube-hidden">
         {isPlaying && (
           <iframe
             id="youtube-audio"
@@ -55,33 +54,30 @@ const PhotoGrid: React.FC<PhotoGridProps> = ({ onGoToQuiz }) => {
       </div>
 
       {/* Cabeçalho */}
-      <div className="bg-[#ECF3FC] border border-[#B4D2FF] p-2 mb-4 flex justify-between items-center">
-        <span className="font-bold text-[#003399] text-sm">
+      <div className="photo-grid-header">
+        <span className="photo-grid-title">
           ✨ Dia da Nossa Mudança para nossa casa ✨
         </span>
 
         <button
           onClick={() => setShowModal(true)}
-          className="bg-[#FF6600] text-white px-2 py-0.5 text-xs font-bold rounded border border-[#CC5200]"
+          className="music-control-btn"
         >
           🎵 Controlar Música
         </button>
       </div>
 
       {/* Grid de Fotos */}
-      <div className="grid grid-cols-3 gap-3 bg-[#F4F8FC] p-3 border border-[#D4E2F4] rounded">
+      <div className="photos-grid">
         {fotos.map((src, index) => (
-          <div
-            key={index}
-            className="bg-white p-1.5 border border-[#CCD9E8] rounded shadow-sm hover:rotate-2 transition-transform duration-200"
-          >
+          <div key={index} className="photo-item">
             <img
               src={src}
               alt={`Momento nosso ${index + 1}`}
-              className="w-full h-28 object-cover rounded-sm grayscale-[20%] hover:grayscale-0"
+              className="photo-image"
             />
 
-            <div className="text-[10px] text-center text-gray-400 mt-1 font-mono">
+            <div className="photo-caption">
               Foto {index + 1}
             </div>
           </div>
@@ -89,10 +85,10 @@ const PhotoGrid: React.FC<PhotoGridProps> = ({ onGoToQuiz }) => {
       </div>
 
       {/* Botão próxima página */}
-      <div className="mt-6 flex justify-end">
+      <div className="next-page-container">
         <button
           onClick={onGoToQuiz}
-          className="bg-[#A4CEFF] text-[#003399] hover:bg-[#B4D2FF] px-6 py-2 rounded font-bold border border-[#5B88C4] shadow-sm flex items-center gap-2"
+          className="next-page-btn"
         >
           Próxima Página (Nosso Quiz) →
         </button>

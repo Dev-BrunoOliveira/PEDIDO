@@ -1,4 +1,6 @@
-/* RESET */
+/* =====================
+   RESET
+   ===================== */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +15,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* HEADER */
+/* =====================
+   HEADER
+   ===================== */
 .orkut-header {
   background: #a4ceff;
   border-bottom: 1px solid #7fa7db;
@@ -38,18 +42,21 @@ body {
   font-weight: bold;
   font-style: italic;
   letter-spacing: -1px;
+  flex-shrink: 0;
 }
 
 .orkut-nav {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .orkut-nav span,
 .user-menu span {
   color: #003399;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .orkut-nav span:hover,
@@ -66,7 +73,9 @@ body {
   color: #666;
 }
 
-/* LAYOUT */
+/* =====================
+   LAYOUT PRINCIPAL
+   ===================== */
 .main-layout {
   width: 100%;
   max-width: 950px;
@@ -75,9 +84,12 @@ body {
   display: grid;
   grid-template-columns: 220px 1fr;
   gap: 16px;
+  align-items: start;
 }
 
-/* SIDEBAR */
+/* =====================
+   SIDEBAR
+   ===================== */
 .profile-sidebar {
   background: #e5edf5;
   border: 1px solid #b4d2ff;
@@ -85,6 +97,8 @@ body {
   padding: 12px;
   text-align: center;
   height: fit-content;
+  position: sticky;
+  top: 16px;
 }
 
 .profile-avatar-box {
@@ -132,7 +146,9 @@ body {
   margin-bottom: 6px;
 }
 
-/* CARD */
+/* =====================
+   CARD
+   ===================== */
 .orkut-card {
   background: white;
   border: 1px solid #7fa7db;
@@ -150,13 +166,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 8px;
 }
 
 .card-body {
   padding: 16px;
 }
 
-/* CONTADOR */
+/* =====================
+   CONTADOR
+   ===================== */
 .counter-box {
   background: #f4f8fc;
   border: 1px solid #b4d2ff;
@@ -179,7 +198,9 @@ body {
   font-family: "Courier New", monospace;
 }
 
-/* SCRAP */
+/* =====================
+   SCRAP
+   ===================== */
 .scrap-box {
   background: #e5edf5;
   border: 1px solid #b4d2ff;
@@ -195,7 +216,9 @@ body {
   margin-bottom: 6px;
 }
 
-/* BOTÕES */
+/* =====================
+   BOTÕES
+   ===================== */
 .orkut-btn,
 .album-btn-music {
   background: #ff6600;
@@ -204,7 +227,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease;
 }
 
 .orkut-btn {
@@ -215,6 +238,7 @@ body {
 .album-btn-music {
   padding: 4px 10px;
   font-size: 11px;
+  white-space: nowrap;
 }
 
 .orkut-btn:hover,
@@ -227,7 +251,9 @@ body {
   justify-content: center;
 }
 
-/* ÁLBUM */
+/* =====================
+   ÁLBUM / PHOTO GRID
+   ===================== */
 .album-container {
   background: #f4f8fc;
   border: 1px solid #d4e2f4;
@@ -245,41 +271,48 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
+/* Grid: 3 colunas fixas, fotos com altura uniforme */
 .album-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 8px;
 }
 
 .photo-card {
   background: white;
   border: 1px solid #ccd9e8;
   border-radius: 4px;
-  padding: 6px;
-  transition: all 0.2s ease;
+  padding: 5px;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .photo-card:hover {
   transform: scale(1.02) rotate(1deg);
 }
 
+/* Altura fixa padronizada — igual ao Orkut clássico */
 .photo-item,
 .photo-img {
   width: 100%;
-  height: 180px;
+  height: 96px; /* h-24 */
   object-fit: cover;
   display: block;
-  border-radius: 4px;
+  border-radius: 3px;
+  flex-shrink: 0;
 }
 
 .photo-caption {
-  margin-top: 6px;
+  margin-top: 5px;
   text-align: center;
   font-size: 10px;
   color: #999;
   font-family: monospace;
+  line-height: 1.2;
 }
 
 .album-footer-nav {
@@ -288,7 +321,9 @@ body {
   justify-content: flex-end;
 }
 
-/* MODAL */
+/* =====================
+   MODAL
+   ===================== */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -341,7 +376,9 @@ body {
   background: #dd0000;
 }
 
-/* FOOTER */
+/* =====================
+   FOOTER
+   ===================== */
 .orkut-footer {
   padding: 24px;
   text-align: center;
@@ -349,27 +386,33 @@ body {
   color: #666;
 }
 
-/* RESPONSIVO */
+/* =====================
+   RESPONSIVO — tablet (≤ 768px)
+   ===================== */
 @media (max-width: 768px) {
   .main-layout {
     grid-template-columns: 1fr;
+    padding: 0 12px;
   }
 
   .profile-sidebar {
     order: 2;
+    position: static; /* remove sticky no mobile */
   }
 
   .orkut-card {
     order: 1;
   }
 
+  /* 2 colunas no tablet */
   .album-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 
   .photo-item,
   .photo-img {
-    height: 160px;
+    height: 96px;
   }
 
   .orkut-nav {
@@ -379,17 +422,6 @@ body {
   .header-container {
     justify-content: center;
     text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .album-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .photo-item,
-  .photo-img {
-    height: 240px;
   }
 
   .card-body {
@@ -402,6 +434,274 @@ body {
 
   .album-action-bar {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* =====================
+   RESPONSIVO — mobile (≤ 480px)
+   ===================== */
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  .main-layout {
+    margin: 8px auto;
+    padding: 0 8px;
+    gap: 10px;
+  }
+
+  /* 1 coluna no mobile, fotos maiores pra ver direito */
+  .album-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .photo-item,
+  .photo-img {
+    height: 110px;
+  }
+
+  .card-title-bar {
+    flex-direction: column;
+    gap: 6px;
     text-align: center;
   }
+
+  .orkut-logo {
+    font-size: 20px;
+  }
+
+  .card-body {
+    padding: 10px;
+  }
+
+  .album-action-bar {
+    padding: 8px;
+  }
+
+  .orkut-btn {
+    padding: 6px 16px;
+    font-size: 12px;
+  }
+}
+/* ==========================================
+   ESTILOS DO ÁLBUM DE FOTOS (PHOTOGRID)
+   ========================================== */
+
+/* Container que envolve o álbum */
+.album-container {
+  background-color: #F4F8FC;
+  border: 1px solid #D4E2F4;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+/* Força o grid de 3 colunas idênticas */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Card de cada foto (com a moldura branca clássica) */
+.photo-card {
+  background-color: #ffffff;
+  border: 1px solid #CCD9E8;
+  padding: 6px;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+/* ISSO AQUI RESOLVE O SEU PROBLEMA: controla o tamanho da imagem */
+.photo-card img {
+  width: 100%;
+  height: 140px;       /* Altura fixa para alinhar todas as fotos */
+  object-fit: cover;   /* Corta a imagem proporcionalmente sem distorcer */
+  display: block;
+  border-radius: 2px;
+}
+
+/* Legenda abaixo de cada foto */
+.photo-caption {
+  font-size: 10px;
+  color: #999999;
+  margin-top: 4px;
+  font-family: monospace;
+}
+
+/* Alinhamento dos botões de navegação */
+.actions-bar {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilo do modal flutuante de música */
+.music-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.music-modal-box {
+  background-color: #E5EDF5;
+  border: 4px solid #003399;
+  padding: 20px;
+  max-width: 300px;
+  width: 100%;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Responsividade para telas de celular */
+@media (max-width: 480px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr); /* Fica em 2 colunas no celular */
+  }
+}
+/* --- Estilos do Álbum de Fotos (PhotoGrid) --- */
+.album-header-bar {
+  background-color: #ECF3FC;
+  border: 1px solid #B4D2FF;
+  padding: 8px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.album-title {
+  font-weight: bold;
+  color: #003399;
+  font-size: 13px;
+}
+
+.music-btn {
+  background-color: #FF6600;
+  color: white;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: bold;
+  border: 1px solid #CC5200;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.music-btn:hover {
+  background-color: #FF751A;
+}
+
+.photos-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  background-color: #F4F8FC;
+  padding: 12px;
+  border: 1px solid #D4E2F4;
+  border-radius: 4px;
+}
+
+@media (max-width: 480px) {
+  .photos-grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Fica em 2 colunas no celular */
+  }
+}
+
+.photo-item-card {
+  background-color: #ffffff;
+  padding: 6px;
+  border: 1px solid #CCD9E8;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.photo-item-card img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.photo-caption {
+  font-size: 10px;
+  color: #888888;
+  margin-top: 4px;
+  font-family: monospace;
+}
+
+.next-page-container {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.next-page-btn {
+  background-color: #A4CEFF;
+  color: #003399;
+  padding: 8px 16px;
+  font-weight: bold;
+  border: 1px solid #5B88C4;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.next-page-btn:hover {
+  background-color: #B4D2FF;
+}
+
+/* --- Estilos do Modal de Música --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-container {
+  background-color: #E5EDF5;
+  border: 4px solid #003399;
+  padding: 20px;
+  max-width: 300px;
+  width: 100%;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+  background-color: #003399;
+  color: white;
+  font-weight: bold;
+  margin: -20px -20px 16px -20px;
+  padding: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.modal-btn-play {
+  width: 100%;
+  padding: 8px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 8px;
 }

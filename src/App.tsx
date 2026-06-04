@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ContractPage from './components/ContractPage';
 import PhotoGrid from './components/PhotoGrid';
 import QuizPage from './components/QuizPage';
-import fotoPerfil from './assets//2.jpg';
+import fotoPerfil from './assets/2.jpg'; // <-- Corrigido: sem barra dupla
 
 export type Stage = 'contract' | 'photos' | 'quiz';
 
@@ -43,14 +43,13 @@ function App() {
         {/* Sidebar Esquerda */}
         <aside className="profile-sidebar">
           <div className="profile-avatar-box">
-            {/* Trocamos a div de placeholder pela imagem real */}
             <img 
               src={fotoPerfil} 
               alt="Larissa e Bruno" 
               style={{ 
                 width: '100%', 
                 height: '100%', 
-                objectFit: 'cover', // Faz com que a imagem preencha o quadrado sem distorcer
+                objectFit: 'cover',
                 display: 'block'
               }} 
             />
@@ -71,7 +70,6 @@ function App() {
             <ContractPage onRenew={() => setStage('photos')} />
           )}
           
-          {/* Deixei mapeado para as próximas telas puxarem as caixas padrão também */}
           {stage === 'photos' && (
             <PhotoGrid onGoToQuiz={() => setStage('quiz')} />
           )}
