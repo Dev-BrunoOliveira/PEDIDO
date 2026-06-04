@@ -1,6 +1,7 @@
-/* =====================
+/* ==========================================
    RESET
-   ===================== */
+   ========================================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -8,206 +9,210 @@
 }
 
 body {
-  background: #d4e2f4;
+  background: #d4dde9;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  color: #000;
-  -webkit-font-smoothing: antialiased;
+  font-size: 12px;
+  color: #333;
 }
 
-/* =====================
-   HEADER
-   ===================== */
+button {
+  font-family: inherit;
+}
+
+/* ==========================================
+   HEADER ORKUT
+   ========================================== */
+
 .orkut-header {
-  background: #a4ceff;
-  border-bottom: 1px solid #7fa7db;
-  padding: 8px 16px;
-  display: flex;
-  justify-content: center;
+  background: linear-gradient(#d86bc5, #c950b1);
+  border-bottom: 2px solid #b53ca0;
+  color: white;
 }
 
 .header-container {
-  width: 100%;
-  max-width: 950px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 16px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 .orkut-logo {
-  color: #003399;
-  font-size: 24px;
-  font-weight: bold;
-  font-style: italic;
-  letter-spacing: -1px;
-  flex-shrink: 0;
+  font-size: 42px;
+  font-weight: normal;
+  color: white;
 }
 
 .orkut-nav {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
+  gap: 14px;
+  font-size: 12px;
 }
 
-.orkut-nav span,
-.user-menu span {
-  color: #003399;
+.orkut-nav span {
   cursor: pointer;
-  white-space: nowrap;
 }
 
-.orkut-nav span:hover,
-.user-menu span:hover {
-  text-decoration: underline;
+.nav-active {
+  font-weight: bold;
 }
+
+.user-menu {
+  font-size: 12px;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.logout-link {
+  color: #ffe4e4;
+}
+
+/* ==========================================
+   SUB BAR
+   ========================================== */
 
 .orkut-sub-bar {
-  background: #ebf2fa;
-  border-bottom: 1px solid #b4d2ff;
-  padding: 6px 16px;
-  text-align: center;
-  font-size: 11px;
-  color: #666;
+  background: #edf3fb;
+  border-bottom: 1px solid #c5d5e8;
 }
 
-/* =====================
-   LAYOUT PRINCIPAL
-   ===================== */
+.relationship-time {
+  color: #003399;
+  font-weight: bold;
+}
+
+/* ==========================================
+   LAYOUT
+   ========================================== */
+
 .main-layout {
-  width: 100%;
-  max-width: 950px;
-  margin: 16px auto;
-  padding: 0 16px;
+  max-width: 1100px;
+  margin: 20px auto;
+
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 250px 1fr;
   gap: 16px;
-  align-items: start;
+
+  padding: 0 16px;
 }
 
-/* =====================
+/* ==========================================
    SIDEBAR
-   ===================== */
+   ========================================== */
+
 .profile-sidebar {
-  background: #e5edf5;
-  border: 1px solid #b4d2ff;
-  border-radius: 6px;
+  background: white;
+  border: 1px solid #b7c9df;
+  border-radius: 4px;
   padding: 12px;
-  text-align: center;
-  height: fit-content;
-  position: sticky;
-  top: 16px;
 }
 
 .profile-avatar-box {
-  background: white;
-  border: 1px solid #b4d2ff;
-  padding: 4px;
-  margin-bottom: 10px;
-}
-
-.avatar-placeholder {
   width: 100%;
   aspect-ratio: 1;
-  background: #b4d2ff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #003399;
-  font-size: 11px;
-  padding: 8px;
-}
-
-.sidebar-name {
-  color: #003399;
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 4px;
-}
-
-.sidebar-location {
-  color: #666;
-  font-size: 11px;
-  margin-bottom: 10px;
-}
-
-.profile-info-list {
-  text-align: left;
-  border-top: 1px solid #b4d2ff;
-  padding-top: 10px;
-  font-size: 11px;
-  color: #003399;
-}
-
-.profile-info-list div {
-  margin-bottom: 6px;
-}
-
-/* =====================
-   CARD
-   ===================== */
-.orkut-card {
-  background: white;
-  border: 1px solid #7fa7db;
-  border-radius: 6px;
+  border: 1px solid #b7c9df;
   overflow: hidden;
 }
 
-.card-title-bar {
-  background: #b4d2ff;
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidebar-name {
+  margin-top: 10px;
   color: #003399;
-  padding: 8px 12px;
-  font-size: 12px;
+  font-size: 20px;
+}
+
+.sidebar-location {
+  color: #777;
+  margin-top: 4px;
+}
+
+.profile-info-list {
+  margin-top: 14px;
+  border-top: 1px solid #d8e3ef;
+  padding-top: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ==========================================
+   CARD PADRÃO
+   ========================================== */
+
+.orkut-card,
+.photo-grid-container,
+.quiz-container {
+  background: white;
+  border: 1px solid #b7c9df;
+  border-radius: 4px;
+}
+
+.card-title-bar,
+.photo-grid-header,
+.quiz-header {
+  background: linear-gradient(#89aed8, #6d97c7);
+  color: white;
   font-weight: bold;
-  border-bottom: 1px solid #7fa7db;
+  padding: 8px 12px;
+  border-bottom: 1px solid #5c84b3;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
+}
+
+.card-subtitle {
+  font-weight: normal;
+  font-size: 11px;
 }
 
 .card-body {
   padding: 16px;
 }
 
-/* =====================
-   CONTADOR
-   ===================== */
+/* ==========================================
+   CONTRATO
+   ========================================== */
+
 .counter-box {
   background: #f4f8fc;
-  border: 1px solid #b4d2ff;
-  border-radius: 6px;
-  padding: 16px;
-  text-align: center;
+  border: 1px solid #d7e5f3;
+  padding: 14px;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .counter-title {
-  color: #666;
-  font-size: 11px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .counter-value {
-  font-size: 28px;
-  font-weight: bold;
   color: #ff6600;
-  font-family: "Courier New", monospace;
+  font-size: clamp(18px, 4vw, 28px);
+  font-weight: bold;
 }
 
-/* =====================
-   SCRAP
-   ===================== */
 .scrap-box {
-  background: #e5edf5;
-  border: 1px solid #b4d2ff;
-  border-radius: 6px;
+  background: #fffff8;
+  border: 1px solid #e5dfb8;
   padding: 12px;
-  margin-bottom: 20px;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .scrap-author {
@@ -216,492 +221,290 @@ body {
   margin-bottom: 6px;
 }
 
-/* =====================
-   BOTÕES
-   ===================== */
-.orkut-btn,
-.album-btn-music {
-  background: #ff6600;
-  color: white;
-  border: 1px solid #cc5200;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.2s ease;
+.orkut-btn-center {
+  text-align: center;
+  margin-top: 18px;
 }
 
 .orkut-btn {
-  padding: 8px 24px;
-  text-transform: uppercase;
-}
-
-.album-btn-music {
-  padding: 4px 10px;
-  font-size: 11px;
-  white-space: nowrap;
-}
-
-.orkut-btn:hover,
-.album-btn-music:hover {
-  background: #ff751a;
-}
-
-.orkut-btn-center {
-  display: flex;
-  justify-content: center;
-}
-
-/* =====================
-   ÁLBUM / PHOTO GRID
-   ===================== */
-.album-container {
-  background: #f4f8fc;
-  border: 1px solid #d4e2f4;
-  border-radius: 6px;
-  padding: 12px;
-}
-
-.album-action-bar {
-  background: #ecf3fc;
-  border: 1px solid #b4d2ff;
-  border-radius: 4px;
-  padding: 8px 12px;
-  margin-bottom: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-/* Grid: 3 colunas fixas, fotos com altura uniforme */
-.album-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
-
-.photo-card {
-  background: white;
-  border: 1px solid #ccd9e8;
-  border-radius: 4px;
-  padding: 5px;
-  transition: transform 0.2s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.photo-card:hover {
-  transform: scale(1.02) rotate(1deg);
-}
-
-/* Altura fixa padronizada — igual ao Orkut clássico */
-.photo-item,
-.photo-img {
-  width: 100%;
-  height: 96px; /* h-24 */
-  object-fit: cover;
-  display: block;
-  border-radius: 3px;
-  flex-shrink: 0;
-}
-
-.photo-caption {
-  margin-top: 5px;
-  text-align: center;
-  font-size: 10px;
-  color: #999;
-  font-family: monospace;
-  line-height: 1.2;
-}
-
-.album-footer-nav {
-  margin-top: 16px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-/* =====================
-   MODAL
-   ===================== */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px;
-  z-index: 999;
-}
-
-.modal-box {
-  width: 100%;
-  max-width: 320px;
-  background: #e5edf5;
-  border: 4px solid #003399;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-}
-
-.modal-header {
-  background: #003399;
-  color: white;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 8px;
-  text-transform: uppercase;
-}
-
-.modal-body {
-  padding: 16px;
-}
-
-.btn-play {
-  background: #008000;
-  border: 1px solid #005500;
-}
-
-.btn-play:hover {
-  background: #009900;
-}
-
-.btn-pause {
-  background: #cc0000;
-  border: 1px solid #880000;
-}
-
-.btn-pause:hover {
-  background: #dd0000;
-}
-
-/* =====================
-   FOOTER
-   ===================== */
-.orkut-footer {
-  padding: 24px;
-  text-align: center;
-  font-size: 11px;
-  color: #666;
-}
-
-/* =====================
-   RESPONSIVO — tablet (≤ 768px)
-   ===================== */
-@media (max-width: 768px) {
-  .main-layout {
-    grid-template-columns: 1fr;
-    padding: 0 12px;
-  }
-
-  .profile-sidebar {
-    order: 2;
-    position: static; /* remove sticky no mobile */
-  }
-
-  .orkut-card {
-    order: 1;
-  }
-
-  /* 2 colunas no tablet */
-  .album-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-  }
-
-  .photo-item,
-  .photo-img {
-    height: 96px;
-  }
-
-  .orkut-nav {
-    display: none;
-  }
-
-  .header-container {
-    justify-content: center;
-    text-align: center;
-  }
-
-  .card-body {
-    padding: 12px;
-  }
-
-  .counter-value {
-    font-size: 22px;
-  }
-
-  .album-action-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-}
-
-/* =====================
-   RESPONSIVO — mobile (≤ 480px)
-   ===================== */
-@media (max-width: 480px) {
-  body {
-    font-size: 12px;
-  }
-
-  .main-layout {
-    margin: 8px auto;
-    padding: 0 8px;
-    gap: 10px;
-  }
-
-  /* 1 coluna no mobile, fotos maiores pra ver direito */
-  .album-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
-  }
-
-  .photo-item,
-  .photo-img {
-    height: 110px;
-  }
-
-  .card-title-bar {
-    flex-direction: column;
-    gap: 6px;
-    text-align: center;
-  }
-
-  .orkut-logo {
-    font-size: 20px;
-  }
-
-  .card-body {
-    padding: 10px;
-  }
-
-  .album-action-bar {
-    padding: 8px;
-  }
-
-  .orkut-btn {
-    padding: 6px 16px;
-    font-size: 12px;
-  }
-}
-/* ==========================================
-   ESTILOS DO ÁLBUM DE FOTOS (PHOTOGRID)
-   ========================================== */
-
-/* Container que envolve o álbum */
-.album-container {
-  background-color: #F4F8FC;
-  border: 1px solid #D4E2F4;
-  padding: 12px;
-  border-radius: 4px;
-}
-
-/* Força o grid de 3 colunas idênticas */
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-/* Card de cada foto (com a moldura branca clássica) */
-.photo-card {
-  background-color: #ffffff;
-  border: 1px solid #CCD9E8;
-  padding: 6px;
-  border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  text-align: center;
-}
-
-/* ISSO AQUI RESOLVE O SEU PROBLEMA: controla o tamanho da imagem */
-.photo-card img {
-  width: 100%;
-  height: 140px;       /* Altura fixa para alinhar todas as fotos */
-  object-fit: cover;   /* Corta a imagem proporcionalmente sem distorcer */
-  display: block;
-  border-radius: 2px;
-}
-
-/* Legenda abaixo de cada foto */
-.photo-caption {
-  font-size: 10px;
-  color: #999999;
-  margin-top: 4px;
-  font-family: monospace;
-}
-
-/* Alinhamento dos botões de navegação */
-.actions-bar {
-  margin-top: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Estilo do modal flutuante de música */
-.music-modal-overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.music-modal-box {
-  background-color: #E5EDF5;
-  border: 4px solid #003399;
-  padding: 20px;
-  max-width: 300px;
-  width: 100%;
-  border-radius: 4px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-/* Responsividade para telas de celular */
-@media (max-width: 480px) {
-  .photo-grid {
-    grid-template-columns: repeat(2, 1fr); /* Fica em 2 colunas no celular */
-  }
-}
-/* --- Estilos do Álbum de Fotos (PhotoGrid) --- */
-.album-header-bar {
-  background-color: #ECF3FC;
-  border: 1px solid #B4D2FF;
-  padding: 8px;
-  margin-bottom: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.album-title {
-  font-weight: bold;
-  color: #003399;
-  font-size: 13px;
-}
-
-.music-btn {
-  background-color: #FF6600;
-  color: white;
-  padding: 2px 8px;
-  font-size: 11px;
-  font-weight: bold;
-  border: 1px solid #CC5200;
-  border-radius: 3px;
+  background: linear-gradient(#f7f7f7, #dfdfdf);
+  border: 1px solid #999;
+  padding: 8px 18px;
   cursor: pointer;
 }
 
-.music-btn:hover {
-  background-color: #FF751A;
+.orkut-btn:hover {
+  background: linear-gradient(#ffffff, #ececec);
 }
 
-.photos-grid-container {
+/* ==========================================
+   ÁLBUM
+   ========================================== */
+
+.photo-grid-header {
+  padding: 10px 12px;
+}
+
+.photo-grid-title {
+  font-size: 12px;
+}
+
+.music-control-btn {
+  background: #ff6600;
+  color: white;
+  border: 1px solid #c74d00;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.photos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  background-color: #F4F8FC;
-  padding: 12px;
-  border: 1px solid #D4E2F4;
-  border-radius: 4px;
+  padding: 16px;
 }
 
-@media (max-width: 480px) {
-  .photos-grid-container {
-    grid-template-columns: repeat(2, 1fr); /* Fica em 2 colunas no celular */
-  }
+.photo-item {
+  border: 1px solid #d7e5f3;
+  background: white;
+  padding: 4px;
 }
 
-.photo-item-card {
-  background-color: #ffffff;
-  padding: 6px;
-  border: 1px solid #CCD9E8;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  text-align: center;
+.photo-item:hover {
+  background: #f4f8fc;
 }
 
-.photo-item-card img {
+.photo-image {
   width: 100%;
-  height: 110px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 2px;
 }
 
 .photo-caption {
-  font-size: 10px;
-  color: #888888;
-  margin-top: 4px;
-  font-family: monospace;
+  text-align: center;
+  padding-top: 6px;
+  color: #666;
+  font-size: 11px;
 }
 
 .next-page-container {
-  margin-top: 24px;
-  display: flex;
-  justify-content: flex-end;
+  padding: 0 16px 16px;
+  text-align: right;
 }
 
 .next-page-btn {
-  background-color: #A4CEFF;
-  color: #003399;
-  padding: 8px 16px;
-  font-weight: bold;
-  border: 1px solid #5B88C4;
-  border-radius: 4px;
+  background: linear-gradient(#f7f7f7, #dfdfdf);
+  border: 1px solid #999;
+  padding: 8px 14px;
   cursor: pointer;
 }
 
-.next-page-btn:hover {
-  background-color: #B4D2FF;
+/* ==========================================
+   QUIZ
+   ========================================== */
+
+.quiz-container {
+  padding-bottom: 16px;
 }
 
-/* --- Estilos do Modal de Música --- */
-.modal-overlay {
+.quiz-content {
+  padding: 16px;
+}
+
+.quiz-progress {
+  text-align: right;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.quiz-question {
+  border: 1px solid #d7e5f3;
+  background: #f9fbfd;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quiz-option {
+  border: 1px solid #c8d7e8;
+  background: white;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.quiz-option-default:hover {
+  background: #edf4fb;
+}
+
+.quiz-option-selected {
+  background: #ffecd8;
+  border-color: #ff6600;
+}
+
+.quiz-option-letter {
+  margin-right: 8px;
+  color: #003399;
+  font-weight: bold;
+}
+
+.quiz-next-btn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px;
+}
+
+.quiz-next-btn-enabled {
+  background: #6d97c7;
+  color: white;
+  border: 1px solid #5276a0;
+}
+
+.quiz-next-btn-disabled {
+  background: #ddd;
+  border: 1px solid #bbb;
+  color: #777;
+}
+
+.quiz-result {
+  padding: 20px;
+  text-align: center;
+}
+
+.quiz-result-title {
+  color: #003399;
+  margin-bottom: 12px;
+}
+
+.quiz-score {
+  display: inline-block;
+  margin: 16px 0;
+  padding: 12px 20px;
+  border: 2px solid #89aed8;
+  background: #edf4fb;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff6600;
+}
+
+.quiz-back-btn {
+  background: none;
+  border: none;
+  color: #003399;
+  cursor: pointer;
+}
+
+/* ==========================================
+   MODAL
+   ========================================== */
+
+.music-modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+
+  padding: 16px;
 }
 
-.modal-container {
-  background-color: #E5EDF5;
-  border: 4px solid #003399;
-  padding: 20px;
-  max-width: 300px;
-  width: 100%;
-  border-radius: 4px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+.music-modal {
+  background: #edf4fb;
+  border: 2px solid #6d97c7;
+  width: 320px;
 }
 
-.modal-header {
-  background-color: #003399;
+.music-modal-header {
+  background: linear-gradient(#89aed8, #6d97c7);
   color: white;
-  font-weight: bold;
-  margin: -20px -20px 16px -20px;
-  padding: 6px;
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
-.modal-btn-play {
-  width: 100%;
   padding: 8px;
   font-weight: bold;
-  color: white;
-  border: none;
-  border-radius: 4px;
+}
+
+.music-modal-label,
+.music-modal-song {
+  padding: 12px;
+  text-align: center;
+}
+
+.music-modal-actions {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.music-btn {
+  padding: 10px;
+  border: 1px solid #999;
   cursor: pointer;
-  margin-bottom: 8px;
+}
+
+.music-btn-play {
+  background: #89d489;
+}
+
+.music-btn-pause {
+  background: #f0a0a0;
+}
+
+.music-modal-close {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.orkut-footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+/* ==========================================
+   RESPONSIVO
+   ========================================== */
+
+@media (max-width: 768px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-left {
+    flex-direction: column;
+  }
+
+  .photos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .photos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-image {
+    height: 260px;
+  }
+
+  .next-page-btn,
+  .orkut-btn {
+    width: 100%;
+  }
 }

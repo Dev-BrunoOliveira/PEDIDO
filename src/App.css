@@ -301,3 +301,32 @@
 .next-page-btn:hover {
   background-color: #B4D2FF;
 }
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-active {
+  font-weight: bold;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.logout-link {
+  color: #aa0000;
+}
+
+.relationship-time {
+  font-weight: bold;
+  color: #003399;
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
