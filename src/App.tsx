@@ -2,7 +2,7 @@ import { useState } from "react";
 import ContractPage from "./components/ContractPage";
 import PhotoGrid from "./components/PhotoGrid";
 import QuizPage from "./components/QuizPage";
-import fotoPerfil from "./assets/2.jpg";
+import fotoPerfil from "./assets/0.jpg";
 
 export type Stage = "contract" | "photos" | "quiz";
 
@@ -36,9 +36,6 @@ function App() {
       {/* Barra de endereço */}
       <div className="orkut-sub-bar">
         <div className="header-container">
-          <div>
-            http://www.orkut.com/Profile?uid=larissa_e_bruno
-          </div>
 
           <div className="relationship-time">
             3 anos e 6 meses de parceria
@@ -98,6 +95,13 @@ function App() {
           )}
         </section>
       </main>
+  <div
+    style={{
+      minHeight: "100vh",
+      display: "flex",
+      flexDirection: "column",
+    }}
+  ></div>
 
       <footer className="orkut-footer">
         Feito com carinho para comemorar nossa data •

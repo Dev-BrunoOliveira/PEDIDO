@@ -22,7 +22,7 @@ const ContractPage: React.FC<ContractPageProps> = ({ onRenew }) => {
         {/* Recado do Bruno */}
         <div className="scrap-box">
           <div className="scrap-author">Bruno escreveu:</div>
-          "O nosso contrato de parceria, risadas, cafunés e companheirismo expirou! Ele precisa da sua assinatura e renovação digital para continuar ativo por mais um longo ciclo. Aceita os termos?"
+          "O nosso contrato de parceria, risadas, dengo e companheirismo expirou! Ele precisa da sua assinatura e renovação digital para continuar ativo por mais um longo ciclo. Aceita os termos?"
         </div>
 
         {/* Botão Centralizado */}
