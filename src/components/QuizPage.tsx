@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import buddyPokeGif from "../assets/buddypoke-kiss.gif.mp4";
 
 interface Question {
   id: number;
@@ -38,12 +39,7 @@ const QuizPage: React.FC<QuizPageProps> = ({ onReset }) => {
     {
       id: 3,
       question: "Se eu pudesse escolher qualquer superpoder, qual seria?",
-      options: [
-        "Voar",
-        "Teletransporte",
-        "Ler mentes",
-        "Invisibilidade",
-      ],
+      options: ["Voar", "Teletransporte", "Ler mentes", "Invisibilidade"],
       correctAnswer: "Teletransporte",
     },
   ];
@@ -64,9 +60,7 @@ const QuizPage: React.FC<QuizPageProps> = ({ onReset }) => {
 
   return (
     <div className="quiz-container">
-      <div className="quiz-header">
-        ❓ Teste de Afinidade da Comunidade ❓
-      </div>
+      <div className="quiz-header"> Vamos ver se me conhece bem ❓</div>
 
       {!quizFinished ? (
         <div className="quiz-content">
@@ -79,26 +73,24 @@ const QuizPage: React.FC<QuizPageProps> = ({ onReset }) => {
           </h3>
 
           <div className="quiz-options">
-  {questions[currentQuestionIndex].options.map((option, idx) => (
-    <button
-      key={idx}
-      onClick={() => setSelectedOption(option)}
-      className={`quiz-option ${
-        selectedOption === option
-          ? "quiz-option-selected"
-          : "quiz-option-default"
-      }`}
-    >
-      <span className="quiz-option-letter">
-        {String.fromCharCode(65 + idx)}
-      </span>
+            {questions[currentQuestionIndex].options.map((option, idx) => (
+              <button
+                key={idx}
+                onClick={() => setSelectedOption(option)}
+                className={`quiz-option ${
+                  selectedOption === option
+                    ? "quiz-option-selected"
+                    : "quiz-option-default"
+                }`}
+              >
+                <span className="quiz-option-letter">
+                  {String.fromCharCode(65 + idx)}
+                </span>
 
-      <span className="quiz-option-text">
-        {option}
-      </span>
-    </button>
-  ))}
-</div>
+                <span className="quiz-option-text">{option}</span>
+              </button>
+            ))}
+          </div>
 
           <button
             onClick={handleNext}
@@ -116,9 +108,7 @@ const QuizPage: React.FC<QuizPageProps> = ({ onReset }) => {
         </div>
       ) : (
         <div className="quiz-result">
-          <h3 className="quiz-result-title">
-            Fim do Quiz!
-          </h3>
+          <h3 className="quiz-result-title">Fim do Quiz!</h3>
 
           <p className="quiz-result-subtitle">
             Veja quanta sorte eu tenho de ter você:
@@ -128,17 +118,20 @@ const QuizPage: React.FC<QuizPageProps> = ({ onReset }) => {
             {score} / {questions.length}
           </div>
 
+          {score === questions.length && (
+            <video className="quiz-gif" autoPlay loop muted playsInline>
+              <source src={buddyPokeGif} type="video/mp4" />
+            </video>
+          )}
+
           <p className="quiz-result-message">
             {score === questions.length
-              ? "Você me conhece perfeitamente! Te amo mais que tudo! 🧡"
+              ? "Você me conhece perfeitamente! Te amo mil milhões! 🧡"
               : "Quase 100%! Acho que precisamos marcar mais encontros para conversar... 😉"}
           </p>
 
-          <button
-            onClick={onReset}
-            className="quiz-back-btn"
-          >
-            ← Voltar para o início
+          <button onClick={onReset} className="quiz-back-btn">
+             Voltar para o início
           </button>
         </div>
       )}

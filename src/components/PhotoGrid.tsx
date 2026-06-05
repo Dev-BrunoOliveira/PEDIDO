@@ -83,7 +83,7 @@ const PhotoGrid: React.FC<PhotoGridProps> = ({ onGoToQuiz }) => {
           onClick={onGoToQuiz}
           className="next-page-btn"
         >
-          Próxima Página (Nosso Quiz) →
+          Próxima Página (Nosso Quiz) 
         </button>
       </div>
 
