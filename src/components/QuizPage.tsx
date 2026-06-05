@@ -79,23 +79,26 @@ const QuizPage: React.FC<QuizPageProps> = ({ onReset }) => {
           </h3>
 
           <div className="quiz-options">
-            {questions[currentQuestionIndex].options.map((option, idx) => (
-              <button
-                key={idx}
-                onClick={() => setSelectedOption(option)}
-                className={`quiz-option ${
-                  selectedOption === option
-                    ? "quiz-option-selected"
-                    : "quiz-option-default"
-                }`}
-              >
-                <span className="quiz-option-letter">
-                  {String.fromCharCode(65 + idx)}
-                </span>
-                {option}
-              </button>
-            ))}
-          </div>
+  {questions[currentQuestionIndex].options.map((option, idx) => (
+    <button
+      key={idx}
+      onClick={() => setSelectedOption(option)}
+      className={`quiz-option ${
+        selectedOption === option
+          ? "quiz-option-selected"
+          : "quiz-option-default"
+      }`}
+    >
+      <span className="quiz-option-letter">
+        {String.fromCharCode(65 + idx)}
+      </span>
+
+      <span className="quiz-option-text">
+        {option}
+      </span>
+    </button>
+  ))}
+</div>
 
           <button
             onClick={handleNext}
